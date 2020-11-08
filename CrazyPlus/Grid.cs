@@ -1,5 +1,4 @@
-﻿using CsharpGame.Engine.Base;
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -7,18 +6,29 @@ using System.Threading.Tasks;
 
 namespace CrazyPlus
 {
+    /// <summary>
+    /// Game grid where the player move the tiles
+    /// </summary>
     public class Grid
     {
+        /// <summary>
+        /// Grid score
+        /// </summary>
         public int Score { get; set; }
         public Tile[,] Tiles { get; set; }
         public bool Calculating { get; set; }
 
-        Audio Add;
-        Audio UpDown;
-        Audio LeftRight;
 
+        /// <summary>
+        /// To check if there is more movement in every side
+        /// </summary>
         public bool MovingLeft, MovingRight, MovingTop, MovingDown;
-        public Grid(Engine engine) 
+
+        /// <summary>
+        /// Init the Grid
+        /// </summary>
+        /// <param name="engine"></param>
+        public Grid() 
         { 
             Tiles = new Tile[4, 4];
             RandomTiles();
@@ -28,15 +38,14 @@ namespace CrazyPlus
             MovingRight = true;
             MovingTop = false;
             MovingDown = false;
-            Add = new Audio(engine.Ressources("add_1.wav"));
-            Add.SetVolume(0);
-            UpDown = new Audio(engine.Ressources("click_1.wav"));
-            LeftRight = new Audio(engine.Ressources("click_2.wav"));
 
         }
 
         private static Random random = new Random();
 
+        /// <summary>
+        /// Generate 4 Random tiles on the start of the game
+        /// </summary>
         private void RandomTiles()
         {
             for (int i = 0; i < 4; i++)
@@ -48,6 +57,9 @@ namespace CrazyPlus
             }
         }
 
+        /// <summary>
+        /// Move the Grid Tiles to down
+        /// </summary>
         public void MoveDown()
         {
             MovingDown = false;
@@ -61,7 +73,6 @@ namespace CrazyPlus
                             Tiles[x, y] = null;
                             MovingDown = true;
                             Tiles[x, y + 1].DoubleIt();
-                            Add.Play(false);
                         }
                     }
                     else if(Tiles[x, y + 1] == null && Tiles[x, y] != null)
@@ -72,7 +83,6 @@ namespace CrazyPlus
                         Score += Tiles[x, y].Value;
                         MovingDown = true;
                         Tiles[x, y] = null;
-                        UpDown.Play(false);
                     }
                 }
             }
@@ -85,6 +95,9 @@ namespace CrazyPlus
 
         }
 
+        /// <summary>
+        /// Move the Grid Tiles to up
+        /// </summary>
         public void MoveUp()
         {
             MovingTop = false;
@@ -99,7 +112,6 @@ namespace CrazyPlus
                             Tiles[x, y] = null;
                             MovingTop = true;
                             Tiles[x, y - 1].DoubleIt();
-                            Add.Play(false);
                         }
                     }
                     else if (Tiles[x, y - 1] == null && Tiles[x, y] != null)
@@ -110,7 +122,6 @@ namespace CrazyPlus
                         Score += Tiles[x, y].Value;
                         MovingTop = true;
                         Tiles[x, y] = null;
-                        UpDown.Play(false);
                     }
                 }
             }
@@ -122,6 +133,9 @@ namespace CrazyPlus
             }
         }
 
+        /// <summary>
+        /// Move the Grid tiles to left
+        /// </summary>
         public void MoveLeft()
         {
             MovingLeft = false;
@@ -136,7 +150,6 @@ namespace CrazyPlus
                             Tiles[x, y] = null;
                             MovingLeft = true;
                             Tiles[x - 1, y].DoubleIt();
-                            Add.Play(false);
                         }
                     }
                     else if (Tiles[x - 1, y] == null && Tiles[x, y] != null)
@@ -147,7 +160,6 @@ namespace CrazyPlus
                         Score += Tiles[x, y].Value;
                         MovingLeft = true;
                         Tiles[x, y] = null;
-                        LeftRight.Play(false);
                     }
                 }
             }
@@ -159,6 +171,9 @@ namespace CrazyPlus
             }
         }
 
+        /// <summary>
+        /// Move the Grid tiles to Right
+        /// </summary>
         public void MoveRight()
         {
             MovingRight = false;
@@ -173,7 +188,6 @@ namespace CrazyPlus
                             Tiles[x, y] = null;
                             Tiles[x + 1, y].DoubleIt();
                             MovingRight = true;
-                            Add.Play(false);
                         }
                     }
                     else if (Tiles[x + 1, y] == null && Tiles[x, y] != null)
@@ -184,7 +198,6 @@ namespace CrazyPlus
                         Score += Tiles[x, y].Value;
                         MovingRight = true;
                         Tiles[x, y] = null;
-                        LeftRight.Play(false);
                     }
                 }
             }
@@ -196,6 +209,10 @@ namespace CrazyPlus
             }
         }
 
+        /// <summary>
+        /// Check if the Grid has more moves
+        /// </summary>
+        /// <returns></returns>
         public bool GameOn()
         {
             if (!MovingDown && !MovingLeft && !MovingRight && !MovingTop)

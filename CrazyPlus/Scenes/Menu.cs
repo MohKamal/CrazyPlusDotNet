@@ -8,16 +8,15 @@ using System.Threading.Tasks;
 
 namespace CrazyPlus.Scenes
 {
+    /// <summary>
+    /// Menu Scene
+    /// </summary>
     public class Menu : Scene
     {
+        //Game scene
         Playing Game { get; set; }
-        public Menu(Engine engine, Playing game) : base("Main Menu", engine)
-        {
-            UpDown = new Audio(engine.Ressources("click_1.wav"));
-            Game = game;
-        }
-
         Audio UpDown;
+        //Buttons
         public SpriteSheet StartBtnOn { get; set; }
         public SpriteSheet StartBtnOff { get; set; }
         public GameObject StartBtn { get; set; }
@@ -28,6 +27,12 @@ namespace CrazyPlus.Scenes
         public Playing game { get; set; }
 
         public Sprite Background { get; set; }
+
+        public Menu(Engine engine, Playing game) : base("Main Menu", engine)
+        {
+            UpDown = new Audio(engine.Ressources("add_1.wav"));
+            Game = game;
+        }
 
         public override bool OnCreate()
         {

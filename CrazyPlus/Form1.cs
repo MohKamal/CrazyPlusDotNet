@@ -16,11 +16,12 @@ namespace CrazyPlus
         {
             InitializeComponent();
         }
+        // The Core game class
         Game Game { get; set; }
         private void Form1_Load(object sender, EventArgs e)
         {
             Game = new Game(Area);
-            Game.Start();
+            Game.Start(); //Start The Game
         }
     }
 }

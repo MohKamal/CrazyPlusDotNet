@@ -7,6 +7,9 @@ using System.Threading.Tasks;
 
 namespace CrazyPlus.Scenes
 {
+    /// <summary>
+    /// Score Scene
+    /// </summary>
     public class Score : Scene
     {
         Playing game { get; set; }
