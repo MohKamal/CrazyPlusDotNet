@@ -1,0 +1,14 @@
+C:\Users\hp\source\repos\CrazyPlus\CrazyPlus\obj\Debug\CrazyPlus.csprojAssemblyReference.cache
+C:\Users\hp\source\repos\CrazyPlus\CrazyPlus\obj\Debug\CrazyPlus.Form1.resources
+C:\Users\hp\source\repos\CrazyPlus\CrazyPlus\obj\Debug\CrazyPlus.Properties.Resources.resources
+C:\Users\hp\source\repos\CrazyPlus\CrazyPlus\obj\Debug\CrazyPlus.csproj.GenerateResource.cache
+C:\Users\hp\source\repos\CrazyPlus\CrazyPlus\obj\Debug\CrazyPlus.csproj.CoreCompileInputs.cache
+C:\Users\hp\source\repos\CrazyPlus\CrazyPlus\bin\Debug\CrazyPlus.exe.config
+C:\Users\hp\source\repos\CrazyPlus\CrazyPlus\bin\Debug\CrazyPlus.exe
+C:\Users\hp\source\repos\CrazyPlus\CrazyPlus\bin\Debug\CrazyPlus.pdb
+C:\Users\hp\source\repos\CrazyPlus\CrazyPlus\bin\Debug\CsharpGame.Engine.dll
+C:\Users\hp\source\repos\CrazyPlus\CrazyPlus\obj\Debug\CrazyPlus.csproj.CopyComplete
+C:\Users\hp\source\repos\CrazyPlus\CrazyPlus\obj\Debug\CrazyPlus.exe
+C:\Users\hp\source\repos\CrazyPlus\CrazyPlus\obj\Debug\CrazyPlus.pdb
+C:\Users\hp\source\repos\CrazyPlus\CrazyPlus\bin\Debug\CsharpGame.Engine.pdb
+C:\Users\hp\source\repos\CrazyPlus\CrazyPlus\bin\Debug\CsharpGame.Engine.dll.config
